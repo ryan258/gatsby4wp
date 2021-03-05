@@ -1,13 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Conf Demo",
+    title: 'RJ Wordless WordPress Demo'
   },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     {
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://ryanleej.wpengine.com/graphql`
+      }
+    },
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
       options: {
         /**
          * @property {boolean} [isResettingCSS=true]
@@ -18,8 +24,8 @@ module.exports = {
          * @property {boolean} [isUsingColorMode=true]
          * if false, this plugin will not use <ColorModeProvider />
          */
-        isUsingColorMode: true,
-      },
-    },
-  ],
-};
+        isUsingColorMode: true
+      }
+    }
+  ]
+}
